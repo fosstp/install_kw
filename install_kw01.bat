@@ -16,7 +16,7 @@ goto end
 
 :agree
 REM 下載資料
-powershell .\files\get_files.ps1
+@powershell -NoProfile -ExecutionPolicy Bypass .\files\get_files.ps1
 
 REM 安裝軟體
 if not exist .\files\MDAC_TYP.EXE goto nofile
