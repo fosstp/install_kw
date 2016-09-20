@@ -42,6 +42,9 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "1201" /t REG_DWORD /d 0 /f
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2" /v "1405" /t REG_DWORD /d 0 /f
 
+REM 允許 IE 執行 ActiveX
+reg add "HKCU\Software\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_LOCALMACHINE_LOCKDOWN" /V iexplore.exe /T REG_DWORD /D 0 /F
+
 REM 砍了安裝完 docNinstall 的選擇應用程式視窗
 taskkill /F /IM OpenWith.exe /T >nul
 
